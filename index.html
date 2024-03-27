@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canvas and Video</title>
+<style>
+    #video, #canvas {
+        display: block;
+        max-width: 100%; /* Make sure they don't exceed the viewport width */
+        height: auto; /* Maintain aspect ratio */
+    }
+</style>
+</head>
+<body>
+<video id="video" width="320" height="180" controls autoplay>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<canvas id="canvas" width="320" height="180"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
