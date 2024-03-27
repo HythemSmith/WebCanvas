@@ -116,7 +116,7 @@ function nonMaximumSuppression(
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
       const index = y * width + x;
-      const angle = gradientDirection[index];
+      let angle = gradientDirection[index];
 
       // Get neighboring pixels
       let dx1, dy1, dx2, dy2;
@@ -295,15 +295,13 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       // Put the processed data onto the canvas
-      ctx.putImageData(
-        new ImageData(
-          new Uint8ClampedArray(edgeData),
-          canvas.width,
-          canvas.height
-        ),
-        0,
-        0
+      const processedImageData = new Uint8ClampedArray(edgeData);
+      const processedFrameData = new ImageData(
+        processedImageData,
+        canvas.width,
+        canvas.height
       );
+      ctx.putImageData(processedFrameData, 0, 0);
 
       requestAnimationFrame(drawFrame);
     };
