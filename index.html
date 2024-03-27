@@ -5,19 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Canvas and Video</title>
 <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Ensure the body covers the entire viewport height */
+        margin: 0; /* Remove default margin */
+        background-color: #000000; /* Optional: Set background color */
+    }
+
     #video, #canvas {
-        display: block;
-        max-width: 100%; /* Make sure they don't exceed the viewport width */
-        height: auto; /* Maintain aspect ratio */
+        width: 640px; /* Set fixed width */
+        height: 360px; /* Set fixed height */
+        border: 2px solid rgb(4, 224, 15);
     }
 </style>
 </head>
 <body>
-<video id="video" width="320" height="180" controls autoplay>
+<video id="video" controls autoplay>
     <source src="video.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
-<canvas id="canvas" width="320" height="180"></canvas>
+<canvas id="canvas"></canvas>
 
 <script src="script.js"></script>
 </body>
